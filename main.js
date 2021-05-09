@@ -51,15 +51,18 @@ function convertToCharser(password, specialchars) {
 function processValues() {
 	let loginVal = document.getElementById("login").value;
 	let shortPassVal = document.getElementById("shortpass").value;
-	let seedFile = arrayBufferToWordArray(g_fileContent);
-
-	const specialChars = "_&#";
-	const outLen = 30;
-
 	if (loginVal.length == 0 || shortPassVal.length == 0) {
 		alert("Login and pass cannot be empty");
 		return;
 	}
+
+	let seedFile = arrayBufferToWordArray(g_fileContent);
+	if (seedFile.sigBytes == 0) {
+		alert("WARNING: For the best security it is recommended to use a seed file!");
+	}
+	const specialChars = "_&#";
+	const outLen = 30;
+
 	var key = scramble(shortPassVal);
 	var vec = scramble(loginVal);
 
