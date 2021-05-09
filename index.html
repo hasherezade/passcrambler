@@ -28,13 +28,17 @@
 				<table border=0>
 					<tr>
 						<td><label for="lname">Login: </label></td>
-						<td><input type="text" id="login" name="login" placeholder="login@service"></td>
-						<td><input type="button" id="login-hide" name="login-hide" value="Hide" onClick="hidePass('login', this)"></td>
+						<td>
+							<input type="text" id="login" name="login" placeholder="login@service"/>
+							<input type="button" id="login-hide" name="login-hide" value="Hide" onClick="hidePass('login', this)"/>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="spname">Short pass: </label></td>
-						<td><input type="password" id="shortpass" name="shortpass" placeholder="my pass"></td>
-						<td><input type="button" id="shortpass-hide" name="shortpass-hide" value="Show" onClick="hidePass('shortpass', this)"></td>
+						<td>
+							<input type="password" id="shortpass" name="shortpass" placeholder="my pass"/>
+							<input type="button" id="shortpass-hide" name="shortpass-hide" value="Show" onClick="hidePass('shortpass', this)"/>
+						</td>
 					</tr>
 					<tr>
 						<td><label for="fname">Seed file: </label></td>
@@ -50,8 +54,10 @@
 				<table>
 					<tr>
 						<td><label for="lpname">Long pass: </label></td>
-						<td><input type="password" id="longpass" name="longpass" size="40" readonly="readonly"></td>
-						<td><input type="button" id="longpass-hide" name="longpass-hide" value="Show" onClick="hidePass('longpass', this)"></td>
+						<td>
+							<input type="password" id="longpass" name="longpass" size="40" readonly="readonly"/>
+							<input type="button" id="longpass-hide" name="longpass-hide" value="Show" onClick="hidePass('longpass', this)" />
+						</td>
 					</tr>
 				</table>
 			</div>
