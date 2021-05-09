@@ -126,8 +126,13 @@ function toClipboard() {
 	passField.setSelectionRange(0, 99999); /* For mobile devices */
 
 	/* Copy the text inside the text field */
-	document.execCommand("copy");
+	var successful = document.execCommand("copy");
 	passField.type = prevType;
+	if (!successful) {
+		alert("Failed to copy!");
+	} else {
+		alert("Copied!");
+	}
 }
 
 function initFormJS() {
