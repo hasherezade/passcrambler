@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="https://hasherezade.github.io/favicon.ico" type="/image/x-icon">
+	<link rel="stylesheet" href="https://hasherezade.github.io/style.css" />
+	<script src="aes.js"></script>
+	<script src="hmac-sha512.js"></script>
+	<script src="main.js"></script>
+
+	<title>Password Scrambler (JavaScript version)</title>
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+	<meta name="robots" content="index" />
+	<meta name="description" content="Password Scrambler - in browser password generator (password manager alternative)" />
+	<meta name="keywords" content="programming, technology, reverse engineering, malware" />
+	<meta name="author" content="Hasherezade" />
+</head>
+
+<body bgcolor="goldenrod" onload="initFormJS()">
+	<h1>Generate your password</h1>
+	<div class="view_adjusted">
+		<div class="central_box">
+			<div class="blurb_box">
+				<form>
+					<table border=0>
+						<tr>
+							<td><label for="lname">Login: </label></td>
+							<td><input type="text" id="login" name="login" placeholder="login@service"></td>
+							<td><input type="button" id="login-hide" name="login-hide" value="Hide" onClick="hidePass('login', this)"></td>
+						</tr>
+						<tr>
+							<td><label for="spname">Short pass: </label></td>
+							<td><input type="password" id="shortpass" name="shortpass" placeholder="my pass"></td>
+							<td><input type="button" id="shortpass-hide" name="shortpass-hide" value="Show" onClick="hidePass('shortpass', this)"></td>
+						</tr>
+						<tr>
+							<td><label for="fname">Seed file: </label></td>
+							<td><input type="file" id="file-input" name="file-input" placeholder="file.txt"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="button" class="myButton" id="generate" name="generate" value="Generate!"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="blurb_box">
+				<table>
+					<tr>
+						<td><label for="lpname">Long pass: </label></td>
+						<td><input type="password" id="longpass" name="longpass" size="40" readonly="readonly"></td>
+						<td><input type="button" id="longpass-hide" name="longpass-hide" value="Show" onClick="hidePass('longpass', this)"></td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
