@@ -1,0 +1,15 @@
+.blurb_box2 {
+  background-color: #323232;
+  color: white;
+  border-radius: 15px;
+  display: block;
+  margin: 3px;
+  text-align: left;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blurb_box2:hover {
+  background-color: #444444;
+  color: white;
+}
