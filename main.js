@@ -113,6 +113,23 @@ function hidePass(id, el) {
 	}
 }
 
+function toClipboard() {
+	/* Get the text field */
+	var passField = document.getElementById("longpass");
+	if (passField.value.length == 0) {
+		return;
+	}
+	var prevType = passField.type;
+	passField.type = "text";
+	/* Select the text field */
+	passField.select();
+	passField.setSelectionRange(0, 99999); /* For mobile devices */
+
+	/* Copy the text inside the text field */
+	document.execCommand("copy");
+	passField.type = prevType;
+}
+
 function initFormJS() {
 	document.getElementById('file-input')
 	  .addEventListener('change', readSingleFile, false);
@@ -120,4 +137,6 @@ function initFormJS() {
 	document.getElementById('generate')
 	  .addEventListener('click', processValues, false);
 
+	document.getElementById('copy')
+	  .addEventListener('click', toClipboard, false);
 }
