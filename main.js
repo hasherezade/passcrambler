@@ -52,14 +52,21 @@ function processValues() {
 	let loginVal = document.getElementById("login").value;
 	let shortPassVal = document.getElementById("shortpass").value;
 	if (loginVal.length == 0 || shortPassVal.length == 0) {
+		if (loginVal.length == 0) {
+			document.getElementById("login").focus();
+		} else if (shortPassVal.length == 0) {
+			document.getElementById("shortpass").focus();
+		}
 		alert("Login and pass cannot be empty");
 		return;
 	}
 	if (loginVal.length < 3) {
+		document.getElementById("login").focus();
 		alert("Login should be at least 3 characters long");
 		return;
 	}
 	if (shortPassVal.length < 8) {
+		document.getElementById("shortpass").focus();
 		alert("Easy password should be at least 8 characters long");
 		return;
 	}
