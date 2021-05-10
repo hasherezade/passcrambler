@@ -106,10 +106,10 @@ function hidePass(id, el) {
 	let x = document.getElementById(id);
 	if (x.type === "password") {
 		x.type = "text";
-		el.value = "Hide";
+		el.className = 'fa fa-eye-slash showpwd';
 	} else {
 		x.type = "password";
-		el.value = "Show";
+		el.className = 'fa fa-eye showpwd';
 	}
 }
 

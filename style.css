@@ -48,3 +48,11 @@ input:required:focus {
 input:required:hover {
 	border: 1px solid red;
 }
+
+td {
+	padding:5px;
+}
+
+.showpwd {
+	padding: 0px;
+}

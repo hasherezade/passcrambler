@@ -9,6 +9,8 @@
 	<script src="hmac-sha512.js"></script>
 	<script src="main.js"></script>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<title>Password Scrambler (JavaScript version)</title>
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="MobileOptimized" content="320" />
@@ -30,27 +32,27 @@
 					<tr>
 						<td><label for="login" class="required">Login: </label></td>
 						<td>
-							<input type="text" id="login" name="login" placeholder="login@service" class="form_field" required />
-							<input type="button" id="login-hide" name="login-hide" value="Hide" onClick="hidePass('login', this)" />
+							<input type="text" id="login" name="login" placeholder="login@service" required />
+							<label for="login" class="fa fa-eye-slash showpwd" onClick="hidePass('login', this)" />
 						</td>
 					</tr>
 					<tr>
 						<td><label for="shortpass" class="required">Short pass: </label></td>
 						<td>
-							<input type="password" id="shortpass" name="shortpass" placeholder="my pass" class="form_field" required />
-							<input type="button" id="shortpass-hide" name="shortpass-hide" value="Show" onClick="hidePass('shortpass', this)" />
+							<input type="password" id="shortpass" name="shortpass" placeholder="my pass" required />
+							<label for="shortpass" class="fa fa-eye showpwd" onClick="hidePass('shortpass', this)"></label>
 						</td>
 					</tr>
 					<tr>
 						<td><label for="file-input">Seed file: </label></td>
 						<td>
-							<input type="file" id="file-input" name="file-input" placeholder="file.txt"  class="form_field" />
+							<input type="file" id="file-input" name="file-input" placeholder="file.txt" />
 						</td>
 					</tr>
 					<tr>
 						<td><label for="passlen">Output length: </label></td>
 						<td>
-							<input type="number" id="passlen" name="passlen" min="10" max="100" value="30"  class="form_field" >
+							<input type="number" id="passlen" name="passlen" min="10" max="100" value="30" />
 						</td>
 					</tr>
 					<tr>
@@ -66,7 +68,7 @@
 						<td><label for="longpass">Long pass: </label></td>
 						<td>
 							<input type="password" id="longpass" name="longpass" size="30" readonly="readonly" />
-							<input type="button" id="longpass-hide" name="longpass-hide" value="Show" onClick="hidePass('longpass', this)" />
+							<label for="longpass" class="fa fa-eye-slash showpwd" onClick="hidePass('longpass', this)" />
 						</td>
 					</tr>
 					<tr>
