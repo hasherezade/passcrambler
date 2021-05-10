@@ -26,9 +26,19 @@
 }
 
 .required:after {
-    content:" *";
-    color: red;
-  }
+	content:" *";
+	color: red;
+}
+
+input[type=text],
+input[type=password],
+input[type=number] {
+	padding: 3px;
+	border: 1px solid;
+	border-radius: 5px;
+	background-color: #f0ede6;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
 
 input:required:focus {
   border: 1px dashed red;
