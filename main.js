@@ -49,6 +49,8 @@ function convertToCharser(password, specialchars) {
 }
 
 function processValues() {
+	
+	/*  fetch and validate the input */
 	let loginVal = document.getElementById("login").value;
 	let shortPassVal = document.getElementById("shortpass").value;
 	if (loginVal.length == 0 || shortPassVal.length == 0) {
@@ -77,7 +79,8 @@ function processValues() {
 	}
 	const outLen = document.getElementById("passlen").value;
 	const specialChars = "_&#";
-
+	
+	/* process the input and generate the password */
 	var key = scramble(shortPassVal);
 	var vec = scramble(loginVal);
 
@@ -101,6 +104,12 @@ function processValues() {
 	document.getElementById("longpass").value = convertToCharser(result, specialChars).substring(0, outLen);
 }
 
+function clearPreviousResults()
+{
+	/* clear the previously generated password */
+	document.getElementById("longpass").value = "";
+}
+
 function readSingleFile(e) {
 	var file = e.target.files[0];
 	if (!file) {
@@ -110,6 +119,7 @@ function readSingleFile(e) {
 	reader.onload = function (e) {
 		var contents = e.target.result;
 		setContents(contents);
+		clearPreviousResults();
 	};
 	reader.readAsArrayBuffer(file);
 }
@@ -174,6 +184,12 @@ function adjustLongPassField()
 function initFormJS() {
 	document.getElementById('file-input')
 	  .addEventListener('change', readSingleFile, false);
+	  
+	document.getElementById('login')
+	  .addEventListener('change', clearPreviousResults, false);
+	  
+	document.getElementById('shortpass')
+	  .addEventListener('change', clearPreviousResults, false);
 
 	document.getElementById('generate')
 	  .addEventListener('click', processValues, false);
