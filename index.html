@@ -28,14 +28,14 @@
 			<div class="blurb_box2">
 				<table border=0>
 					<tr>
-						<td><label for="login">Login: </label></td>
+						<td><label for="login" class="required">Login: </label></td>
 						<td>
 							<input type="text" id="login" name="login" placeholder="login@service" required />
 							<input type="button" id="login-hide" name="login-hide" value="Hide" onClick="hidePass('login', this)" />
 						</td>
 					</tr>
 					<tr>
-						<td><label for="shortpass">Short pass: </label></td>
+						<td><label for="shortpass" class="required">Short pass: </label></td>
 						<td>
 							<input type="password" id="shortpass" name="shortpass" placeholder="my pass" required />
 							<input type="button" id="shortpass-hide" name="shortpass-hide" value="Show" onClick="hidePass('shortpass', this)" />
@@ -44,7 +44,7 @@
 					<tr>
 						<td><label for="file-input">Seed file: </label></td>
 						<td>
-							<input type="file" id="file-input" name="file-input" placeholder="file.txt" required />
+							<input type="file" id="file-input" name="file-input" placeholder="file.txt" />
 						</td>
 					</tr>
 					<tr>
