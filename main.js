@@ -60,8 +60,8 @@ function processValues() {
 	if (seedFile.sigBytes == 0) {
 		alert("WARNING: For the best security it is recommended to use a seed file!");
 	}
+	const outLen = document.getElementById("passlen").value;
 	const specialChars = "_&#";
-	const outLen = 30;
 
 	var key = scramble(shortPassVal);
 	var vec = scramble(loginVal);
@@ -135,6 +135,13 @@ function toClipboard() {
 	}
 }
 
+function adjustLongPassField()
+{
+	const outLen = document.getElementById("passlen").value;
+	var passField = document.getElementById("longpass");
+	passField.size = outLen;
+}
+
 function initFormJS() {
 	document.getElementById('file-input')
 	  .addEventListener('change', readSingleFile, false);
@@ -144,4 +151,9 @@ function initFormJS() {
 
 	document.getElementById('copy')
 	  .addEventListener('click', toClipboard, false);
+
+	document.getElementById('passlen')
+	  .addEventListener('change', adjustLongPassField, false);
+
+	adjustLongPassField();
 }
