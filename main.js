@@ -137,7 +137,20 @@ function toClipboard() {
 
 function adjustLongPassField()
 {
-	const outLen = document.getElementById("passlen").value;
+	var passLenField = document.getElementById("passlen");
+
+	const maxLen = parseInt(passLenField.max, 10);
+	const minLen = parseInt(passLenField.min, 10);
+	var outLen = parseInt(passLenField.value, 10);
+
+	if (outLen > maxLen) {
+		passLenField.value = passLenField.max;
+		outLen = maxLen;
+	}
+	if (outLen < minLen) {
+		passLenField.value = passLenField.min;
+		outLen = minLen;
+	}
 	var passField = document.getElementById("longpass");
 	passField.size = outLen;
 }
