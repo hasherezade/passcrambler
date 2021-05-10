@@ -55,6 +55,14 @@ function processValues() {
 		alert("Login and pass cannot be empty");
 		return;
 	}
+	if (loginVal.length < 3) {
+		alert("Login should be at least 3 characters long");
+		return;
+	}
+	if (shortPassVal.length < 8) {
+		alert("Easy password should be at least 8 characters long");
+		return;
+	}
 
 	let seedFile = arrayBufferToWordArray(g_fileContent);
 	if (seedFile.sigBytes == 0) {
@@ -107,7 +115,7 @@ function hidePass(id, el) {
 	if (x.type === "password") {
 		x.type = "text";
 		el.className = 'fa fa-eye-slash showpwd';
-	} else {
+	} else if (x.type === "text") {
 		x.type = "password";
 		el.className = 'fa fa-eye showpwd';
 	}
