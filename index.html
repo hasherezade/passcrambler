@@ -32,14 +32,14 @@
 					<tr>
 						<td><label for="login" class="required">Login: </label></td>
 						<td>
-							<input type="text" id="login" name="login" placeholder="login@service" required />
+							<input type="text" id="login" name="login" placeholder="login@service" autocapitalize="off" autocorrect="off" required />
 							<label for="login" class="fa fa-eye-slash showpwd" onClick="hidePass('login', this)" ></label>
 						</td>
 					</tr>
 					<tr>
 						<td><label for="shortpass" class="required">Easy pass: </label></td>
 						<td>
-							<input type="password" id="shortpass" name="shortpass" placeholder="my pass" required />
+							<input type="password" id="shortpass" name="shortpass" placeholder="my pass" autocapitalize="off" autocorrect="off" required />
 							<label for="shortpass" class="fa fa-eye showpwd" onClick="hidePass('shortpass', this)" ></label>
 						</td>
 					</tr>
@@ -67,7 +67,7 @@
 					<tr>
 						<td><label for="longpass">Complex pass: </label></td>
 						<td>
-							<input type="password" id="longpass" name="longpass" size="30" readonly="readonly" />
+							<input type="password" id="longpass" name="longpass" size="30" autocapitalize="off" autocorrect="off" readonly="readonly" />
 							<label for="longpass" class="fa fa-eye showpwd" onClick="hidePass('longpass', this)" ></label>
 						</td>
 					</tr>
