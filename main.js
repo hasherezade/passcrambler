@@ -19,7 +19,6 @@ function aesEncrypt(msg, key, iv) {
 }
 
 function shaDigest(content) {
-	var _content = CryptoJS.enc.Hex.parse(content);
 	var hash = CryptoJS.SHA512(content);
 	return hash;
 }
