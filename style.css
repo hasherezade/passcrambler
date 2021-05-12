@@ -62,8 +62,13 @@ td {
 	padding: 0px;
 }
 
-.copy_status {
-	color: #e9967b;
+.status_ok {
+	color: #93f600;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.status_failed {
+	color: #ff4040;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
