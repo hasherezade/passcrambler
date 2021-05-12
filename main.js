@@ -100,13 +100,19 @@ function processValues() {
 
 	let result = CryptoJS.SHA512(portion);
 	result = CryptoJS.enc.Base64.stringify(result);
-	document.getElementById("longpass").value = convertToCharser(result, specialChars).substring(0, outLen);
+	var longOutput = convertToCharser(result, specialChars).substring(0, 100);
+	
+	var outputField = document.getElementById("longpass");
+	outputField.placeholder = longOutput;
+	outputField.value = longOutput.substring(0, outLen);
 }
 
 function clearPreviousResults()
 {
 	/* clear the previously generated password */
-	document.getElementById("longpass").value = "";
+	var outputField = document.getElementById("longpass");
+	outputField.placeholder = "";
+	outputField.value = "";
 	document.getElementById("copyStatus").innerHTML = "";
 }
 
@@ -184,6 +190,12 @@ function adjustLongPassField()
 	if (outLen < minLen) {
 		passLenField.value = minLen;
 	}
+	
+	var field = document.getElementById("longpass");
+	if (field.value.length == 0) {
+		return;
+	}
+	field.value = field.placeholder.substring(0, passLenField.value);
 }
 
 function clearStatusAfter(statusField, seconds) {
