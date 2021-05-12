@@ -40,6 +40,11 @@ input[type=number] {
 	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
 }
 
+input[type=text],
+input[type=password] {
+	font: 1rem Inconsolata, monospace;
+}
+
 input:required:focus {
   border: 1px dashed red;
   outline: none;
@@ -55,4 +60,9 @@ td {
 
 .showpwd {
 	padding: 0px;
+}
+
+.copy_status {
+	color: #c49aa0;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
