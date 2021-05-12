@@ -66,3 +66,17 @@ td {
 	color: #c49aa0;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+table{
+	width:100%;
+	padding: 5px;
+}
+
+.label_field {
+	text-align: right;
+	width: 15%;
+}
+
+.longpass_field {
+	width: 93%;
+}
