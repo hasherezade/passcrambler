@@ -107,6 +107,7 @@ function clearPreviousResults()
 {
 	/* clear the previously generated password */
 	document.getElementById("longpass").value = "";
+	document.getElementById("copyStatus").innerHTML = "";
 }
 
 function readSingleFile(e) {
@@ -154,9 +155,9 @@ function toClipboard() {
 	var successful = document.execCommand("copy");
 	passField.type = prevType;
 	if (!successful) {
-		alert("Failed to copy!");
+		document.getElementById("copyStatus").innerHTML = "Failed to copy!";
 	} else {
-		alert("Copied!");
+		document.getElementById("copyStatus").innerHTML = "Copied!";
 	}
 }
 
