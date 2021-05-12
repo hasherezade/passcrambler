@@ -168,21 +168,20 @@ function toClipboard() {
 function adjustLongPassField()
 {
 	var passLenField = document.getElementById("passlen");
-
+	const defaultLen = 30;
 	const maxLen = parseInt(passLenField.max, 10);
 	const minLen = parseInt(passLenField.min, 10);
 	var outLen = parseInt(passLenField.value, 10);
-
+	if (isNaN(outLen)) {
+		passLenField.value = defaultLen;
+		outLen = defaultLen;
+	}
 	if (outLen > maxLen) {
-		passLenField.value = passLenField.max;
-		outLen = maxLen;
+		passLenField.value = maxLen;
 	}
 	if (outLen < minLen) {
-		passLenField.value = passLenField.min;
-		outLen = minLen;
+		passLenField.value = minLen;
 	}
-	var passField = document.getElementById("longpass");
-	passField.size = outLen;
 }
 
 function clearStatusAfter(statusField, seconds) {
