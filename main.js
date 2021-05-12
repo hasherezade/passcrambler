@@ -158,9 +158,9 @@ function toClipboard() {
 	/* Show copy status */ 
 	var statusField = document.getElementById("copyStatus");
 	if (!successful) {
-		statusField.innerHTML = "Failed to copy!";
+		statusField.innerHTML = "[failed to copy]";
 	} else {
-		statusField.innerHTML = "Copied!";
+		statusField.innerHTML = "[copied]";
 	}
 	clearStatusAfter(statusField, 5);
 }
