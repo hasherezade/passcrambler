@@ -154,11 +154,15 @@ function toClipboard() {
 	/* Copy the text inside the text field */
 	var successful = document.execCommand("copy");
 	passField.type = prevType;
+	
+	/* Show copy status */ 
+	var statusField = document.getElementById("copyStatus");
 	if (!successful) {
-		document.getElementById("copyStatus").innerHTML = "Failed to copy!";
+		statusField.innerHTML = "Failed to copy!";
 	} else {
-		document.getElementById("copyStatus").innerHTML = "Copied!";
+		statusField.innerHTML = "Copied!";
 	}
+	clearStatusAfter(statusField, 5);
 }
 
 function adjustLongPassField()
@@ -179,6 +183,15 @@ function adjustLongPassField()
 	}
 	var passField = document.getElementById("longpass");
 	passField.size = outLen;
+}
+
+function clearStatusAfter(statusField, seconds) {
+	
+	var remainingTime = seconds * 1000; // 1 second = 1000 ms
+
+	setTimeout(function() {
+		statusField.innerHTML = "";
+	}, remainingTime);
 }
 
 function initFormJS() {
