@@ -1,4 +1,5 @@
 var g_fileContent = ArrayBuffer();
+var g_longOutput ="";
 
 function scramble(mystr) {
 	var hash = CryptoJS.MD5(mystr);
@@ -102,8 +103,8 @@ function processValues() {
 	result = CryptoJS.enc.Base64.stringify(result);
 	var longOutput = convertToCharser(result, specialChars).substring(0, 100);
 	
+	g_longOutput = longOutput;
 	var outputField = document.getElementById("longpass");
-	outputField.placeholder = longOutput;
 	outputField.value = longOutput.substring(0, outLen);
 }
 
@@ -111,7 +112,7 @@ function clearPreviousResults()
 {
 	/* clear the previously generated password */
 	var outputField = document.getElementById("longpass");
-	outputField.placeholder = "";
+	g_longOutput = "";
 	outputField.value = "";
 	document.getElementById("copyStatus").innerHTML = "";
 }
@@ -195,7 +196,7 @@ function adjustLongPassField()
 	if (field.value.length == 0) {
 		return;
 	}
-	field.value = field.placeholder.substring(0, passLenField.value);
+	field.value = g_longOutput.substring(0, passLenField.value);
 }
 
 function clearStatusAfter(statusField, seconds) {
