@@ -146,32 +146,22 @@ function hidePass(id, el) {
 }
 
 function toClipboard() {
-	/* Get the text field */
-	var passField = document.getElementById("longpass");
-	if (passField.value.length == 0) {
-		return;
-	}
-	var prevType = passField.type;
-	passField.type = "text";
-	/* Select the text field */
-	passField.select();
-	passField.setSelectionRange(0, 99999); /* For mobile devices */
+    var passField = document.getElementById("longpass");
+    if (passField.value.length == 0) return;
 
-	/* Copy the text inside the text field */
-	var successful = document.execCommand("copy");
-	passField.type = prevType;
-	
-	/* Show copy status */ 
-	var statusField = document.getElementById("copyStatus");
-	if (!successful) {
-		statusField.className = "status_failed";
-		statusField.innerHTML = "[failed to copy]";
-	} else {
-		statusField.className = "status_ok";
-		statusField.innerHTML = "[copied]";
-	}
-	clearStatusAfter(statusField, 5);
+    navigator.clipboard.writeText(passField.value).then(function() {
+        var statusField = document.getElementById("copyStatus");
+        statusField.className = "status_ok";
+        statusField.innerHTML = "[copied]";
+        clearStatusAfter(statusField, 5);
+    }).catch(function() {
+        var statusField = document.getElementById("copyStatus");
+        statusField.className = "status_failed";
+        statusField.innerHTML = "[failed to copy]";
+        clearStatusAfter(statusField, 5);
+    });
 }
+
 
 function adjustLongPassField()
 {
