@@ -86,7 +86,6 @@ function processValues() {
 
 	let aes_out1 = aesEncrypt(seedFile, key, vec);
 	let digested = shaDigest(aes_out1);
-	let outPass = digested;
 
 	let sha_digest = CryptoJS.enc.Hex.stringify(digested);
 	var passlen = (shortPassVal.length * 2) % sha_digest.length
